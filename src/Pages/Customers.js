@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 import { getCustomer } from "../API";
 
@@ -49,7 +49,7 @@ const Customers = () => {
   const data=customersdata && customersdata.map((user)=>{
     return( {
        id:user.id,
-       photo:<img src={user.image} className=" w-10 h-10"/>,
+       photo:<img src={user.image} className=" w-10 h-10" alt="img"/>,
       //  photo:user.image,
        name:user.firstName +" "+user.lastName,
        age:user.age,

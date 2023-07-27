@@ -4,8 +4,7 @@ import {
   faIndianRupee,
   faStore,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import getOrders, { getCustomer, getInventory, getRevenue } from "../API";
 import CardBox from "../Components/CardBox";
 import RecentOrders, { ChartBars } from "../Components/RecentOrders";
@@ -33,7 +32,7 @@ const Dashboard = () => {
       d+=cart.discountedTotal;
       return d;
     });
-    if(d!=0){
+    if(d!==0){
 
       setRevenueData(d);
     }

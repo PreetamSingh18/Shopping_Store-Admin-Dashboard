@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell , faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import NotificationBadge from "react-notification-badge/lib/components/NotificationBadge";
-import { Effect } from "react-notification-badge";
+// import NotificationBadge from "react-notification-badge/lib/components/NotificationBadge";
+// import { Effect } from "react-notification-badge";
 import getOrders from "../../API";
 import { getComments } from "../../API";
 
@@ -42,11 +42,12 @@ const Header = () => {
         {/* </div> */}
         {/* <div> */}
         <div className="flex w-2/4 justify-end ">
-          <div className={`${dataNum==2?'m-auto' :'mr-5'} ${dataNum==1?'hidden':""}  `}>
+          <div className={`${dataNum===2?'m-auto' :'mr-5'} ${dataNum===1?'hidden':""} text-center `}>
           {/* <div className="> */}
-            <div>
-              <NotificationBadge count={comments?comments.length:0} effect={Effect.SCALE} />
-            </div>
+            {/* <div> */}
+            <span className="top-3 relative left-1  bg-red-400 w-7 inline-block rounded-xl">{comments?comments.length:0}</span>
+              {/* <NotificationBadge count={comments?comments.length:0} effect={Effect.SCALE} /> */}
+            {/* </div> */}
             <div className="">
               <FontAwesomeIcon icon={faEnvelope} className="mr-5 text-3xl" onClick={()=>{
                 if(dataNum<2){
@@ -63,13 +64,14 @@ const Header = () => {
               <h2>Hello</h2>
             </div> */}
           </div>
-          <div className={`${dataNum==1?'m-auto' :'mr-5'}  `}>
-            <div>
-              <NotificationBadge count={orders?orders.length:0} effect={Effect.SCALE}  />
-            </div>
+          <div className={`${dataNum===1?'m-auto' :'mr-5'} text-center`}>
+            {/* <div> */}
+             <span className="top-3 relative left-1 bg-red-400 w-7 inline-block rounded-xl">{orders?orders.length:0}</span>
+              {/* <NotificationBadge count={orders?orders.length:0} effect={Effect.SCALE}  /> */}
+            {/* </div> */}
             <div >
               <FontAwesomeIcon icon={faBell} className="mr-5 text-3xl" onClick={()=>{ 
-                if(dataNum!=1){
+                if(dataNum!==1){
                 setOpenMenu(true);
               setDataNum(2);
               setDataShow(orders);

@@ -9,7 +9,7 @@ const CardBox = ({title , value, icons}) => {
    else if(title==='Inventory'){
     color='bg-purple-200';
    }
-   else if(title=='Customer'){
+   else if(title==='Customer'){
     color='bg-sky-200';
    }
 

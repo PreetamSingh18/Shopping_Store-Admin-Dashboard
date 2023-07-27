@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import StarRatings from "react-star-ratings";
 import { getInventory } from "../API";
 import ReactLoading from "react-loading";
@@ -7,7 +6,6 @@ import DataTable from "react-data-table-component";
 
 const Inverntory = () => {
   const [data, setData] = useState([]);
-  const [records, setRecords] = useState([]);
   const [isLoading, setisLoading] = useState(false);
   // let records;
 
@@ -79,7 +77,7 @@ const Inverntory = () => {
     data.map((product) => {
       return {
         id: product.id,
-        photo: <img src={product.thumbnail} className="w-10 h-10" />,
+        photo: <img src={product.thumbnail} className="w-10 h-10" alt="img" />,
         title: product.title,
         price: product.price,
         rating: (

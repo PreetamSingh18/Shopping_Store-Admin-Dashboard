@@ -1,14 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import getOrders, { getRevenue } from "../API";
 import ReactLoading from "react-loading";
-import {
-  Chart as ChartJS,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
+// import {
+//   Chart as ChartJS,
+//   LinearScale,
+//   BarElement,
+//   Title,
+//   Tooltip,
+//   Legend,
+// } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
 import Chart from "chart.js/auto";
