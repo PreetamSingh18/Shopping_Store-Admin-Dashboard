@@ -131,8 +131,9 @@ export function ChartBars() {
         return `User-${cart.userId}`;
       });
       const data = res.carts?.map((cart) => {
-        return cart.discountedTotal?.toLocaleString('en-US');
+        return cart.discountedTotal;
       });
+      console.log(data);
       const dataSource = {
         labels,
         datasets: [
