@@ -47,10 +47,10 @@ const Orders = () => {
       return {
         id: product.id,
         title: product.title,
-        price: product.price,
+        price: product.price?.toLocaleString('en-US'),
         quantity: product.quantity,
-        total: product.total,
-        discountedPrice: product.discountedPrice,
+        total: product.total?.toLocaleString('en-US'),
+        discountedPrice: product.discountedPrice?.toLocaleString('en-US'),
       };
     });
   // console.log(dataList);
@@ -89,7 +89,7 @@ const Orders = () => {
 
   return (
     <div>
-      <h3 className="mt-2 ml-4 text-2xl font-medium">Orders</h3>
+      <h3 className="mt-2 ml-4 text-2xl font-medium max-sm:text-xl">Orders</h3>
       <div className="w-full h-[70vh] overflow-auto mt-2">
         {/* <table>
           <thead>

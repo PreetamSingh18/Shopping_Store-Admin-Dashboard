@@ -110,7 +110,7 @@ const customStyles = {
 
   return (
     <div className="w-2/4 mr-5 max-lg:w-[80%] max-md:h-2/4">
-      <h4 className="text-xl font-medium p-4">Recent Orders</h4>
+      <h4 className="text-xl font-medium p-4 max-sm:text-lg">Recent Orders</h4>
       <DataTable
           columns={columns}
           data={dataList}
@@ -131,7 +131,7 @@ export function ChartBars() {
         return `User-${cart.userId}`;
       });
       const data = res.carts?.map((cart) => {
-        return cart.discountedTotal;
+        return cart.discountedTotal?.toLocaleString('en-US');
       });
       const dataSource = {
         labels,
@@ -148,6 +148,7 @@ export function ChartBars() {
   }, []);
 
   const options = {
+    aspectRatio:2/1.5,
     responsive: true,
     plugins: {
       legend: {
@@ -163,7 +164,7 @@ export function ChartBars() {
   
 
   return (
-    <div className="w-2/4 max-md:h-[30vh]" >
+    <div className="w-2/4 max-md:h-[40vh] max-md:w-[80vw]" >
       {/* <h4 >Revenue Chart</h4> */}
       <Bar options={options} data={revenueData} className={"h-full "}/>
     </div>

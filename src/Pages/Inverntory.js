@@ -79,7 +79,7 @@ const Inverntory = () => {
         id: product.id,
         photo: <img src={product.thumbnail} className="w-10 h-10" alt="img" />,
         title: product.title,
-        price: product.price,
+        price: product.price?.toLocaleString('en-US'),
         rating: (
           <StarRatings
             rating={product.rating}
@@ -107,6 +107,9 @@ const Inverntory = () => {
         minHeight: "45px",
         fontSize: "15px",
         // borderRight:'2px',
+        "@media (max-width: 500px)": {
+          fontSize: "12px",
+        },
       },
     },
     headCells: {
@@ -115,12 +118,29 @@ const Inverntory = () => {
         paddingRight: "8px",
         fontWeight: "bold",
         fontSize: "20px",
+        // backgroundColor:"blue",
+        
+      "@media (max-width: 768px)": {
+        paddingLeft: "5px", // override the cell padding for head cells
+        paddingRight: "5px",
+        fontSize: "15px",
+      },
+      "@media (max-width: 500px)": {
+        paddingLeft: "5px", // override the cell padding for head cells
+        paddingRight: "5px",
+        fontSize: "12px",
+      },
       },
     },
     cells: {
       style: {
         paddingLeft: "8px", // override the cell padding for data cells
         paddingRight: "8px",
+        "@media (max-width: 500px)": {
+          paddingLeft: "5px", // override the cell padding for head cells
+          paddingRight: "5px",
+          fontSize: "12px",
+        },
       },
     },
     pagination: {
@@ -129,7 +149,7 @@ const Inverntory = () => {
   };
   return (
     <div>
-      <h3 className="mt-2 ml-4 text-2xl font-medium">Inventory</h3>
+      <h3 className="mt-2 ml-4 text-2xl font-medium max-sm:text-xl">Inventory</h3>
 
       <div className="w-full h-[75vh]">
         <DataTable

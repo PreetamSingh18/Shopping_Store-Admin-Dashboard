@@ -66,38 +66,54 @@ const Customers = () => {
   };
   const customStyles = {
     rows: {
-        style: {
-            minHeight: '45px',
-            fontSize:"15px",
-            // borderRight:'2px',
+      style: {
+        minHeight: "45px",
+        fontSize: "15px",
+        // borderRight:'2px',
+        "@media (max-width: 500px)": {
+          fontSize: "12px",
         },
+      },
     },
     headCells: {
-        style: {
-            paddingLeft: '8px', // override the cell padding for head cells
-            paddingRight: '8px',
-            fontWeight: 'bold',
-            fontSize:"20px",
-        },
+      style: {
+        paddingLeft: "8px", // override the cell padding for head cells
+        paddingRight: "8px",
+        fontWeight: "bold",
+        fontSize: "20px",
+        // backgroundColor:"blue",
+        
+      "@media (max-width: 768px)": {
+        paddingLeft: "5px", // override the cell padding for head cells
+        paddingRight: "5px",
+        fontSize: "15px",
+      },
+      "@media (max-width: 500px)": {
+        paddingLeft: "5px", // override the cell padding for head cells
+        paddingRight: "5px",
+        fontSize: "12px",
+      },
+      },
     },
     cells: {
-        style: {
-            paddingLeft: '8px', // override the cell padding for data cells
-            paddingRight: '8px',
-           
+      style: {
+        paddingLeft: "8px", // override the cell padding for data cells
+        paddingRight: "8px",
+        "@media (max-width: 500px)": {
+          paddingLeft: "5px", // override the cell padding for head cells
+          paddingRight: "5px",
+          fontSize: "12px",
         },
+      },
     },
-    pagination:{
-      style:{
-
-      }
-    }
-};
-
+    pagination: {
+      style: {},
+    },
+  };
 
   return (
     <div>
-      <h3 className="mt-2 ml-4 text-2xl font-medium">Customers</h3>
+      <h3 className="mt-2 ml-4 text-2xl font-medium max-sm:text-xl">Customers</h3>
       <div className="w-full h-[75vh] mt-2">
         {/* <table>
           <thead>

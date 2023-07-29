@@ -42,14 +42,14 @@ const Header = () => {
         {/* </div> */}
         {/* <div> */}
         <div className="flex w-2/4 justify-end items-center">
-          <div className={`${dataNum===2?'m-auto' :'mr-5'} ${dataNum===1?'hidden':""} text-center `}>
+          <div className={`${dataNum===2?'m-auto' :'mr-5'} ${dataNum===1?'hidden':""} text-center relative -top-2 `}>
           {/* <div className="> */}
             {/* <div> */}
-            <span className="top-3 relative left-1  bg-red-400 w-7 inline-block rounded-xl max-sm:text-base">{comments?.length}</span>
+            <span className="top-3 relative left-1  bg-red-400 w-7 inline-block rounded-xl max-sm:text-base max-sm:w-5 max-sm1:text-sm">{comments?.length}</span>
               {/* <NotificationBadge count={comments?comments.length:0} effect={Effect.SCALE} /> */}
             {/* </div> */}
             <div className="">
-              <FontAwesomeIcon icon={faEnvelope} className="mr-5 text-3xl max-sm:text-xl" onClick={()=>{
+              <FontAwesomeIcon icon={faEnvelope} className="mr-5 text-3xl max-sm:text-2xl" onClick={()=>{
                 if(dataNum<2 ){
                 setOpenMenu(true);
               setDataNum(1);
@@ -64,13 +64,13 @@ const Header = () => {
               <h2>Hello</h2>
             </div> */}
           </div>
-          <div className={`${dataNum===1?'m-auto' :'mr-5'} text-center`}>
+          <div className={`${dataNum===1?'m-auto' :'mr-5'} text-center relative -top-2`}>
             {/* <div> */}
-             <span className="top-3 relative left-1 bg-red-400 w-7 inline-block rounded-xl max-sm:text-base">{orders?.length}</span>
+             <span className="top-3 relative left-1 bg-red-400 w-7 inline-block rounded-xl max-sm:text-base max-sm:w-5 max-sm1:text-sm">{orders?.length}</span>
               {/* <NotificationBadge count={orders?orders.length:0} effect={Effect.SCALE}  /> */}
             {/* </div> */}
             <div >
-              <FontAwesomeIcon icon={faBell} className="mr-5 text-3xl max-sm:text-xl" onClick={()=>{ 
+              <FontAwesomeIcon icon={faBell} className="mr-5 text-3xl max-sm:text-2xl" onClick={()=>{ 
                 if(dataNum!==1 ){
                 setOpenMenu(true);
               setDataNum(2);
