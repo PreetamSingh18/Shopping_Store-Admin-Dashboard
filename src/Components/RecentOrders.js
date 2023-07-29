@@ -74,17 +74,29 @@ const customStyles = {
       paddingRight: "8px",
       fontWeight: "bold",
       fontSize: "20px",
+      display: "grid",
+      gridTemplateColumns: "auto auto auto",
+
+      "@media (max-width: 768px)": {
+        paddingLeft: "5px", // override the cell padding for head cells
+        paddingRight: "5px",
+        fontSize: "15px",
+      }, 
+     
     },
   },
   cells: {
     style: {
       paddingLeft: "8px", // override the cell padding for data cells
       paddingRight: "8px",
+      "@media (max-width: 768px)": {
+        paddingLeft: "5px", // override the cell padding for head cells
+        paddingRight: "5px",
+        fontSize: "15px",
+      }, 
     },
   },
-  pagination: {
-    style: {},
-  },
+ 
 };
 
 
@@ -97,7 +109,7 @@ const customStyles = {
 
 
   return (
-    <div className="w-2/4 mr-5">
+    <div className="w-2/4 mr-5 max-lg:w-[80%] max-md:h-2/4">
       <h4 className="text-xl font-medium p-4">Recent Orders</h4>
       <DataTable
           columns={columns}
@@ -143,14 +155,17 @@ export function ChartBars() {
       },
       title: {
         display: true,
-        text: "Order Revenue",
+        text: "Revenue Chart",
       },
+      
     },
   };
+  
 
   return (
-    <div className="w-2/4 mr-5">
-      <Bar options={options} data={revenueData} />
+    <div className="w-2/4 max-md:h-[30vh]" >
+      {/* <h4 >Revenue Chart</h4> */}
+      <Bar options={options} data={revenueData} className={"h-full "}/>
     </div>
   );
 }

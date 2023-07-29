@@ -36,21 +36,21 @@ const Header = () => {
 //  console.log(orders);
   return (
     // <div>
-      <div className=" flex items-center justify-between h-[10vh] relative bg-red-200">
+      <div className=" flex items-center justify-between h-[10vh] relative bg-red-200 max-md:h-[8vh] max-sm:h-[7vh]">
         {/* <div className="ml-8 mt-1 w-2/4"> */}
-          <h1 className="text-2xl ml-8">Admin Dashboard</h1>
+          <h1 className="text-2xl ml-8 max-sm:text-xl max-sm2:text-lg">Admin Dashboard</h1>
         {/* </div> */}
         {/* <div> */}
-        <div className="flex w-2/4 justify-end ">
+        <div className="flex w-2/4 justify-end items-center">
           <div className={`${dataNum===2?'m-auto' :'mr-5'} ${dataNum===1?'hidden':""} text-center `}>
           {/* <div className="> */}
             {/* <div> */}
-            <span className="top-3 relative left-1  bg-red-400 w-7 inline-block rounded-xl">{comments?.length}</span>
+            <span className="top-3 relative left-1  bg-red-400 w-7 inline-block rounded-xl max-sm:text-base">{comments?.length}</span>
               {/* <NotificationBadge count={comments?comments.length:0} effect={Effect.SCALE} /> */}
             {/* </div> */}
             <div className="">
-              <FontAwesomeIcon icon={faEnvelope} className="mr-5 text-3xl" onClick={()=>{
-                if(dataNum<2 && comments){
+              <FontAwesomeIcon icon={faEnvelope} className="mr-5 text-3xl max-sm:text-xl" onClick={()=>{
+                if(dataNum<2 ){
                 setOpenMenu(true);
               setDataNum(1);
               setDataShow(comments);
@@ -66,12 +66,12 @@ const Header = () => {
           </div>
           <div className={`${dataNum===1?'m-auto' :'mr-5'} text-center`}>
             {/* <div> */}
-             <span className="top-3 relative left-1 bg-red-400 w-7 inline-block rounded-xl">{orders?.length}</span>
+             <span className="top-3 relative left-1 bg-red-400 w-7 inline-block rounded-xl max-sm:text-base">{orders?.length}</span>
               {/* <NotificationBadge count={orders?orders.length:0} effect={Effect.SCALE}  /> */}
             {/* </div> */}
             <div >
-              <FontAwesomeIcon icon={faBell} className="mr-5 text-3xl" onClick={()=>{ 
-                if(dataNum!==1 && orders){
+              <FontAwesomeIcon icon={faBell} className="mr-5 text-3xl max-sm:text-xl" onClick={()=>{ 
+                if(dataNum!==1 ){
                 setOpenMenu(true);
               setDataNum(2);
               setDataShow(orders);
@@ -82,14 +82,14 @@ const Header = () => {
             
           </div>
         </div>
-        <div className={`${openMenu?'inline-block':'hidden'} w-[22%] h-[95vh] top-0 left-[78%] absolute bg-white z-10 `}>
+        <div className={`${openMenu?'inline-block':'hidden'} w-[22%] h-[95vh] top-0 left-[78%] absolute bg-white z-10  max-md:w-[50vw]  max-md:left-[50%] max-sm1:w-full max-sm1:left-auto max-sm1:h-[100vh] max-sm1:fixed`}>
         <FontAwesomeIcon icon={faXmark} className="text-4xl ml-3 mt-6" onClick={()=>{setOpenMenu(false);
         setDataNum(0);
         setDataShow([])}}/>
          <div className="top-5 relative">
          <h4 className="text-xl font-medium text-center mb-2">{dataNum===1?"Comments":"Orders History"}</h4>
          <ul>
-          { DataShow===0?<li className="bg-red-100">There is no records to display</li>:
+          { DataShow===0 ?<li className="bg-red-100 text-center">There is no records to display</li>:
             (DataShow && DataShow.slice(0,Math.min(DataShow.length,15)).map((val)=>{
               return <li className="border-b-2 p-1 ml-2">{val}</li>
             }))

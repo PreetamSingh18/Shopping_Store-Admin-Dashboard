@@ -41,9 +41,9 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div>
-        <h2 className="mt-2 ml-4 text-2xl font-medium">DashBoard</h2>
-        <div className="grid grid-cols-4 gap-1 mt-5 ml-4 w-3/5  ">
+      <div className="w-full max-md:h-full" >
+        <h2 className="mt-2 ml-4 text-2xl font-medium max-sm2:ml-1">DashBoard</h2>
+        <div className=" grid grid-cols-4 gap-1 mt-5 ml-4 w-3/5  max-xl:w-[90%] max-lg:w-[90%]  max-md:grid-cols-2 max-sm2:ml-1">
           <CardBox
             title="Orders"
             icons={faCartShopping}
@@ -70,7 +70,7 @@ const Dashboard = () => {
           />
         </div>
       </div>
-      <div className="flex">
+      <div className="flex max-lg:flex-col w-full h-full  max-md:h-full">
         <RecentOrders />
         <ChartBars />
       </div>
